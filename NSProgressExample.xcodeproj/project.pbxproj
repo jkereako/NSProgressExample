@@ -38,9 +38,9 @@
 		62AF613F1DB43EB0001DDB57 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		62AF61411DB43EB0001DDB57 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		62AF61441DB43EB0001DDB57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		62AF61461DB43EB0001DDB57 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = NSProgressExample/Assets.xcassets; sourceTree = "<group>"; };
+		62AF61461DB43EB0001DDB57 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		62AF61491DB43EB0001DDB57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		62AF614B1DB43EB0001DDB57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = NSProgressExample/Info.plist; sourceTree = "<group>"; };
+		62AF614B1DB43EB0001DDB57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		62AF61501DB43EB0001DDB57 /* NSProgressExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NSProgressExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		62AF61541DB43EB0001DDB57 /* NSProgressExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSProgressExampleTests.swift; sourceTree = "<group>"; };
 		62AF61561DB43EB0001DDB57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -77,11 +77,11 @@
 		62AF61331DB43EB0001DDB57 = {
 			isa = PBXGroup;
 			children = (
-				62AF616F1DB43ED9001DDB57 /* SupportFiles */,
-				62AF616E1DB43ECF001DDB57 /* Resources */,
-				62AF616D1DB43EC7001DDB57 /* Tests */,
-				62AF613E1DB43EB0001DDB57 /* Source */,
 				62AF613D1DB43EB0001DDB57 /* Products */,
+				62AF616E1DB43ECF001DDB57 /* Resources */,
+				62AF613E1DB43EB0001DDB57 /* Source */,
+				62AF616F1DB43ED9001DDB57 /* SupportFiles */,
+				62AF616D1DB43EC7001DDB57 /* Tests */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,47 +101,44 @@
 				62AF613F1DB43EB0001DDB57 /* AppDelegate.swift */,
 				62AF61411DB43EB0001DDB57 /* ViewController.swift */,
 			);
-			name = Source;
-			path = NSProgressExample;
+			path = Source;
 			sourceTree = "<group>";
 		};
 		62AF61531DB43EB0001DDB57 /* UnitTests */ = {
 			isa = PBXGroup;
 			children = (
-				62AF61541DB43EB0001DDB57 /* NSProgressExampleTests.swift */,
 				62AF61561DB43EB0001DDB57 /* Info.plist */,
+				62AF61541DB43EB0001DDB57 /* NSProgressExampleTests.swift */,
 			);
-			name = UnitTests;
-			path = NSProgressExampleTests;
+			path = UnitTests;
 			sourceTree = "<group>";
 		};
 		62AF615E1DB43EB0001DDB57 /* UITests */ = {
 			isa = PBXGroup;
 			children = (
-				62AF615F1DB43EB0001DDB57 /* NSProgressExampleUITests.swift */,
 				62AF61611DB43EB0001DDB57 /* Info.plist */,
+				62AF615F1DB43EB0001DDB57 /* NSProgressExampleUITests.swift */,
 			);
-			name = UITests;
-			path = NSProgressExampleUITests;
+			path = UITests;
 			sourceTree = "<group>";
 		};
 		62AF616D1DB43EC7001DDB57 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				62AF61531DB43EB0001DDB57 /* UnitTests */,
 				62AF615E1DB43EB0001DDB57 /* UITests */,
+				62AF61531DB43EB0001DDB57 /* UnitTests */,
 			);
-			name = Tests;
+			path = Tests;
 			sourceTree = "<group>";
 		};
 		62AF616E1DB43ECF001DDB57 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				62AF61431DB43EB0001DDB57 /* Main.storyboard */,
 				62AF61461DB43EB0001DDB57 /* Assets.xcassets */,
 				62AF61481DB43EB0001DDB57 /* LaunchScreen.storyboard */,
+				62AF61431DB43EB0001DDB57 /* Main.storyboard */,
 			);
-			name = Resources;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		62AF616F1DB43ED9001DDB57 /* SupportFiles */ = {
@@ -149,7 +146,7 @@
 			children = (
 				62AF614B1DB43EB0001DDB57 /* Info.plist */,
 			);
-			name = SupportFiles;
+			path = SupportFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -329,7 +326,7 @@
 				62AF61441DB43EB0001DDB57 /* Base */,
 			);
 			name = Main.storyboard;
-			path = NSProgressExample;
+			path = .;
 			sourceTree = "<group>";
 		};
 		62AF61481DB43EB0001DDB57 /* LaunchScreen.storyboard */ = {
@@ -338,7 +335,7 @@
 				62AF61491DB43EB0001DDB57 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			path = NSProgressExample;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -481,7 +478,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = NSProgressExample/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/SupportFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alexisdigital.NSProgressExample;
@@ -494,7 +491,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = NSProgressExample/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/SupportFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alexisdigital.NSProgressExample;
@@ -508,7 +505,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = NSProgressExampleTests/Info.plist;
+				INFOPLIST_FILE = Tests/UnitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alexisdigital.NSProgressExampleTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -522,7 +519,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = NSProgressExampleTests/Info.plist;
+				INFOPLIST_FILE = Tests/UnitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alexisdigital.NSProgressExampleTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -535,7 +532,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				INFOPLIST_FILE = NSProgressExampleUITests/Info.plist;
+				INFOPLIST_FILE = Tests/UITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alexisdigital.NSProgressExampleUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -548,7 +545,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				INFOPLIST_FILE = NSProgressExampleUITests/Info.plist;
+				INFOPLIST_FILE = Tests/UITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alexisdigital.NSProgressExampleUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -576,6 +573,7 @@
 				62AF61661DB43EB0001DDB57 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		62AF61671DB43EB0001DDB57 /* Build configuration list for PBXNativeTarget "NSProgressExampleTests" */ = {
 			isa = XCConfigurationList;
@@ -584,6 +582,7 @@
 				62AF61691DB43EB0001DDB57 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		62AF616A1DB43EB0001DDB57 /* Build configuration list for PBXNativeTarget "NSProgressExampleUITests" */ = {
 			isa = XCConfigurationList;
@@ -592,6 +591,7 @@
 				62AF616C1DB43EB0001DDB57 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
