@@ -1,5 +1,5 @@
 //
-//  Router.swift
+//  Endpoint.swift
 //  NSProgressExample
 //
 //  Created by Jeff Kereakoglow on 10/18/16.
@@ -9,7 +9,7 @@
 import Foundation
 
 /// Provides type-safe URL buidling. Usage: `Router.file1MB.url`
-enum Router {
+enum Endpoint {
     static let baseURLString = "https://github.com/jkereako/NSProgressExample/blob/master/Fixtures/"
     
     case file1MB
@@ -42,7 +42,7 @@ enum Router {
             }
         }()
         
-        var components = URLComponents(string: Router.baseURLString)!
+        var components = URLComponents(string: Endpoint.baseURLString)!
         components.queryItems = [URLQueryItem(name: "raw", value: "true")]
         let baseURL = components.url!
         

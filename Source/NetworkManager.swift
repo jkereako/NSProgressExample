@@ -9,7 +9,7 @@
 import Foundation
 
 struct NetworkManager {
-    let endpoint: Router
+    let endpoint: Endpoint
     
     /// Downloads a file and stores it locally
     func download() {
