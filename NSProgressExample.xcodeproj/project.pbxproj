@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		365B70971DB6B74200A50190 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365B70961DB6B74200A50190 /* NetworkManager.swift */; };
+		365B70991DB6B87400A50190 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365B70981DB6B87400A50190 /* Router.swift */; };
+		365B709B1DB6BDC600A50190 /* FileListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365B709A1DB6BDC600A50190 /* FileListTableViewController.swift */; };
 		62AF61401DB43EB0001DDB57 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62AF613F1DB43EB0001DDB57 /* AppDelegate.swift */; };
-		62AF61421DB43EB0001DDB57 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62AF61411DB43EB0001DDB57 /* ViewController.swift */; };
 		62AF61451DB43EB0001DDB57 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62AF61431DB43EB0001DDB57 /* Main.storyboard */; };
 		62AF61471DB43EB0001DDB57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62AF61461DB43EB0001DDB57 /* Assets.xcassets */; };
 		62AF614A1DB43EB0001DDB57 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62AF61481DB43EB0001DDB57 /* LaunchScreen.storyboard */; };
@@ -34,9 +36,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		365B70961DB6B74200A50190 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		365B70981DB6B87400A50190 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		365B709A1DB6BDC600A50190 /* FileListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileListTableViewController.swift; sourceTree = "<group>"; };
 		62AF613C1DB43EB0001DDB57 /* NSProgressExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NSProgressExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		62AF613F1DB43EB0001DDB57 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		62AF61411DB43EB0001DDB57 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		62AF61441DB43EB0001DDB57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		62AF61461DB43EB0001DDB57 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		62AF61491DB43EB0001DDB57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -99,7 +103,9 @@
 			isa = PBXGroup;
 			children = (
 				62AF613F1DB43EB0001DDB57 /* AppDelegate.swift */,
-				62AF61411DB43EB0001DDB57 /* ViewController.swift */,
+				365B70961DB6B74200A50190 /* NetworkManager.swift */,
+				365B70981DB6B87400A50190 /* Router.swift */,
+				365B709A1DB6BDC600A50190 /* FileListTableViewController.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -283,7 +289,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				62AF61421DB43EB0001DDB57 /* ViewController.swift in Sources */,
+				365B70991DB6B87400A50190 /* Router.swift in Sources */,
+				365B709B1DB6BDC600A50190 /* FileListTableViewController.swift in Sources */,
+				365B70971DB6B74200A50190 /* NetworkManager.swift in Sources */,
 				62AF61401DB43EB0001DDB57 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
