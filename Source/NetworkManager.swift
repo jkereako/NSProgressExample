@@ -12,11 +12,11 @@ struct NetworkManager {
     let endpoint: Endpoint
     
     /// Downloads a file and stores it locally
-    func download() {
+    func download(completion: @escaping (URL?, URLResponse?, Error?) -> Void) {
         let session = URLSession.shared
         let urlRequest = URLRequest(url: endpoint.url)
         let downloadTask = session.downloadTask(with: urlRequest) { url, response, error in
-            print(url)
+            return completion(url, response, error)
         }
         
         downloadTask.resume()

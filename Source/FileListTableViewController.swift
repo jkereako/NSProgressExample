@@ -39,5 +39,12 @@ extension FileListTableViewController {
 extension FileListTableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        let networkManager = NetworkManager(endpoint: dataSource[indexPath.row])
+        
+        networkManager.download { url, response, error in
+            let cell = tableView.cellForRow(at: indexPath)
+            cell?.accessoryType = .checkmark
+        }
     }
 }
