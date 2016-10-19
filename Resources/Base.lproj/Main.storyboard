@@ -10,30 +10,30 @@
         <scene sceneID="Mi2-ru-cKP">
             <objects>
                 <tableViewController id="SmW-BO-4Bs" userLabel="File list" customClass="FileListTableViewController" customModule="NSProgressExample" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="cRQ-hd-eb3">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="64" sectionHeaderHeight="28" sectionFooterHeight="28" id="cRQ-hd-eb3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="7kC-bf-IwR" detailTextLabel="6CD-zI-sKt" style="IBUITableViewCellStyleSubtitle" id="1pW-M0-Hei">
-                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="cell" textLabel="Zlq-JI-ZXa" detailTextLabel="fju-iN-af9" style="IBUITableViewCellStyleSubtitle" id="1pW-M0-Hei">
+                                <rect key="frame" x="0.0" y="92" width="375" height="64"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1pW-M0-Hei" id="prj-wV-vwg">
-                                    <frame key="frameInset" width="375" height="43.5"/>
+                                    <frame key="frameInset" width="336" height="63.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7kC-bf-IwR">
-                                            <frame key="frameInset" minX="15" minY="5" width="33.5" height="20.5"/>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="30MB file" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Zlq-JI-ZXa" userLabel="File name">
+                                            <frame key="frameInset" minX="15" minY="8" width="75.5" height="22.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6CD-zI-sKt">
-                                            <frame key="frameInset" minX="15" minY="25.5" width="33" height="14.5"/>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="42% completed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fju-iN-af9" userLabel="Percent completed">
+                                            <frame key="frameInset" minX="15" minY="30.5" width="138.5" height="25"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="21"/>
+                                            <color key="textColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -45,7 +45,7 @@
                             <outlet property="delegate" destination="SmW-BO-4Bs" id="n5N-GF-HL2"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="5EH-lE-WJc"/>
+                    <navigationItem key="navigationItem" title="Test files" prompt="Tap on a row to begin downloading" id="5EH-lE-WJc"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5V4-kU-rkL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -55,9 +55,13 @@
         <scene sceneID="lEu-yT-xHB">
             <objects>
                 <navigationController storyboardIdentifier="navigationController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Mma-Mg-7R6" userLabel="Navigation" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Dr7-3r-V3u">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Dr7-3r-V3u">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="SmW-BO-4Bs" kind="relationship" relationship="rootViewController" id="sbg-Qp-XkW"/>
