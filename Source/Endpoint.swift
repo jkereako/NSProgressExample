@@ -49,3 +49,29 @@ enum Endpoint {
         return baseURL.appendingPathComponent(path)
     }
 }
+
+// MARK: - CustomStringConvertible
+extension Endpoint: CustomStringConvertible {
+    var description: String {
+        switch self {
+        case .file1MB:
+            return "1MB file"
+            
+        case .file3MB:
+            return "3MB file"
+            
+        case .file5MB:
+            return "5MB file"
+            
+        case .file10MB:
+            return "10MB file"
+            
+        case .file20MB:
+            return "20MB file"
+            
+        case .file30MB:
+            return "30MB file"
+        }
+
+    }
+}
