@@ -14,6 +14,7 @@ class FileListTableViewController: UITableViewController {
     fileprivate var networkManager: NetworkManager?
     fileprivate let cellIdentifier = "cell"
     fileprivate let observedKeyPath = "fractionCompleted"
+    fileprivate var selectedIndexPath: IndexPath?
     fileprivate lazy var dataSource: [FileViewModel] = [
         FileViewModel(endpoint: .file1MB),
         FileViewModel(endpoint: .file3MB),
@@ -36,10 +37,11 @@ extension FileListTableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
+        let viewModel = dataSource[indexPath.row]
         
-        cell.textLabel?.text = dataSource[indexPath.row].endpoint.description
-        cell.detailTextLabel?.text = ""
-        cell.accessoryType = dataSource[indexPath.row].state == .saved ? .checkmark : .none
+        cell.textLabel?.text = viewModel.endpoint.description
+        cell.detailTextLabel?.text = viewModel.detail
+        cell.accessoryType = viewModel.state == .saved ? .checkmark : .none
         
         return cell
     }
@@ -55,12 +57,16 @@ extension FileListTableViewController {
             return
         }
         
+        selectedIndexPath = indexPath
+        
         networkManager = NetworkManager(endpoint: dataSource[indexPath.row].endpoint) { url in
             OperationQueue.main.addOperation { [unowned self] in
                 self.networkManager?.progress.removeObserver(self, forKeyPath: self.observedKeyPath)
                 
                 self.dataSource[indexPath.row] = FileViewModel(
-                    endpoint: self.dataSource[indexPath.row].endpoint, state: .saved
+                    endpoint: self.dataSource[indexPath.row].endpoint,
+                    detail: FileState.saved.description,
+                    state: .saved
                 )
                 
                 tableView.beginUpdates()
@@ -101,8 +107,22 @@ extension FileListTableViewController {
         }
         
         // TODO: Update UI
-        OperationQueue.main.addOperation {
-            print(progress.fractionCompleted)
+        OperationQueue.main.addOperation { [unowned self] in
+            guard let indexPath = self.selectedIndexPath else {
+                assertionFailure("`selectedIndexPath` is nil")
+                return
+            }
+            
+            let viewModel = self.dataSource[indexPath.row]
+            self.dataSource[indexPath.row] = FileViewModel(
+                endpoint: viewModel.endpoint,
+                detail: progress.localizedAdditionalDescription,
+                state: .downloading
+            )
+            
+            self.tableView.beginUpdates()
+            self.tableView.reloadRows(at: [indexPath], with: .none)
+            self.tableView.endUpdates()
         }
     }
 }

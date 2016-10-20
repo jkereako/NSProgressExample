@@ -11,10 +11,12 @@ import Foundation
 /// Data model
 struct FileViewModel {
     let endpoint: Endpoint
+    let detail: String
     let state: FileState
     
-    init(endpoint: Endpoint, state: FileState = .empty) {
+    init(endpoint: Endpoint, detail: String = "", state: FileState = .empty) {
         self.endpoint = endpoint
+        self.detail = detail
         self.state = state
     }
 }

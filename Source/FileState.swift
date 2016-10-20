@@ -13,3 +13,19 @@ enum FileState {
     case downloading
     case saved
 }
+
+// MARK: - CustomStringConvertible
+extension FileState: CustomStringConvertible {
+    var description: String {
+        switch self {
+        case .empty:
+            return "Empty"
+            
+        case .downloading:
+            return "Downloading"
+            
+        case .saved:
+            return "Saved"
+        }
+    }
+}
