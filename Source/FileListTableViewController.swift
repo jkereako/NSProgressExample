@@ -61,7 +61,13 @@ extension FileListTableViewController {
         
         networkManager = NetworkManager(endpoint: dataSource[indexPath.row].endpoint) { url in
             OperationQueue.main.addOperation { [unowned self] in
-                self.networkManager?.progress.removeObserver(self, forKeyPath: self.observedKeyPath)
+                
+                // REVIEW: This crashes when tapping on multiple rows too quickly
+                self.networkManager?.progress.removeObserver(
+                    self, forKeyPath:
+                    self.observedKeyPath,
+                    context: &FileListTableViewControllerObservationContext
+                )
                 
                 self.dataSource[indexPath.row] = FileViewModel(
                     endpoint: self.dataSource[indexPath.row].endpoint,
