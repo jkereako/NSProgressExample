@@ -11,5 +11,10 @@ import Foundation
 /// Data model
 struct FileViewModel {
     let endpoint: Endpoint
-    let isDownloaded: Bool
+    let state: FileState
+    
+    init(endpoint: Endpoint, state: FileState = .empty) {
+        self.endpoint = endpoint
+        self.state = state
+    }
 }
