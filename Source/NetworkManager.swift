@@ -19,10 +19,11 @@ class NetworkManager: NSObject, ProgressReporting {
         progress = Progress(totalUnitCount: -1)
         progress.kind = .file
 
-        // #warning you must cast as AnyObject otherwise you will get a Segmentation Fault 11 
-        // compiler error.
+        // #warning you must cast `Progress.FileOperationKind.downloading` as `AnyObject` otherwise
+        // the compiler will error out with "Segmentation fault: 11"
         progress.setUserInfoObject(
-            Progress.FileOperationKind.downloading as AnyObject, forKey: .fileOperationKindKey
+            Progress.FileOperationKind.downloading as AnyObject,
+            forKey: ProgressUserInfoKey.fileOperationKindKey
         )
 
         super.init()
