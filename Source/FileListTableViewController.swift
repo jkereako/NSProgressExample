@@ -46,19 +46,18 @@ extension FileListTableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
 
-        let networkManager = NetworkManager(endpoint: dataSource[indexPath.row].endpoint)
-
-        networkManager.download { url, response, error in
+        let networkManager = NetworkManager(endpoint: dataSource[indexPath.row].endpoint) { url in
             DispatchQueue.main.async { [unowned self] in
                 // Update the data source's state
                 self.dataSource[indexPath.row] = File(
                     endpoint: self.dataSource[indexPath.row].endpoint, isDownloaded: true
                 )
-                
+
                 tableView.beginUpdates()
                 tableView.reloadRows(at: [indexPath], with: .fade)
                 tableView.endUpdates()
             }
         }
+        networkManager.download()
     }
 }
