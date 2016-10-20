@@ -14,13 +14,13 @@ class FileListTableViewController: UITableViewController {
     fileprivate var networkManager: NetworkManager?
     fileprivate let cellIdentifier = "cell"
     fileprivate let observedKeyPath = "fractionCompleted"
-    fileprivate lazy var dataSource: [File] = [
-        File(endpoint: .file1MB, isDownloaded: false),
-        File(endpoint: .file3MB, isDownloaded: false),
-        File(endpoint: .file5MB, isDownloaded: false),
-        File(endpoint: .file10MB, isDownloaded: false),
-        File(endpoint: .file20MB, isDownloaded: false),
-        File(endpoint: .file30MB, isDownloaded: false)
+    fileprivate lazy var dataSource: [FileViewModel] = [
+        FileViewModel(endpoint: .file1MB, isDownloaded: false),
+        FileViewModel(endpoint: .file3MB, isDownloaded: false),
+        FileViewModel(endpoint: .file5MB, isDownloaded: false),
+        FileViewModel(endpoint: .file10MB, isDownloaded: false),
+        FileViewModel(endpoint: .file20MB, isDownloaded: false),
+        FileViewModel(endpoint: .file30MB, isDownloaded: false)
     ]
 }
 
@@ -53,7 +53,7 @@ extension FileListTableViewController {
             OperationQueue.main.addOperation { [unowned self] in
                 self.networkManager?.progress.removeObserver(self, forKeyPath: self.observedKeyPath)
 
-                self.dataSource[indexPath.row] = File(
+                self.dataSource[indexPath.row] = FileViewModel(
                     endpoint: self.dataSource[indexPath.row].endpoint, isDownloaded: true
                 )
 

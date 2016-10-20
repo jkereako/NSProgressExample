@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  FileViewModel.swift
 //  NSProgressExample
 //
 //  Created by Jeff Kereakoglow on 10/19/16.
@@ -9,7 +9,7 @@
 import Foundation
 
 /// Data model
-struct File {
+struct FileViewModel {
     let endpoint: Endpoint
     let isDownloaded: Bool
 }
