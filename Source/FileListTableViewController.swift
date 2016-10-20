@@ -8,8 +8,12 @@
 
 import UIKit
 
+fileprivate var FileListTableViewControllerObservationContext = 0
+
 class FileListTableViewController: UITableViewController {
+    fileprivate var networkManager: NetworkManager?
     fileprivate let cellIdentifier = "cell"
+    fileprivate let observedKeyPath = "fractionCompleted"
     fileprivate lazy var dataSource: [File] = [
         File(endpoint: .file1MB, isDownloaded: false),
         File(endpoint: .file3MB, isDownloaded: false),
@@ -44,11 +48,11 @@ extension FileListTableViewController {
 // MARK: - Table view delegate
 extension FileListTableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
 
-        let networkManager = NetworkManager(endpoint: dataSource[indexPath.row].endpoint) { url in
-            DispatchQueue.main.async { [unowned self] in
-                // Update the data source's state
+        networkManager = NetworkManager(endpoint: dataSource[indexPath.row].endpoint) { url in
+            OperationQueue.main.addOperation { [unowned self] in
+                self.networkManager?.progress.removeObserver(self, forKeyPath: self.observedKeyPath)
+
                 self.dataSource[indexPath.row] = File(
                     endpoint: self.dataSource[indexPath.row].endpoint, isDownloaded: true
                 )
@@ -58,6 +62,37 @@ extension FileListTableViewController {
                 tableView.endUpdates()
             }
         }
-        networkManager.download()
+
+        networkManager?.progress.addObserver(
+            self,
+            forKeyPath: observedKeyPath,
+            options: [],
+            context: &FileListTableViewControllerObservationContext
+        )
+
+        networkManager?.download()
+    }
+}
+
+// MARK: - KVO
+extension FileListTableViewController {
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?,
+                               change: [NSKeyValueChangeKey: Any]?,
+                               context: UnsafeMutableRawPointer?) {
+
+        guard context == &FileListTableViewControllerObservationContext else {
+            super.observeValue(forKeyPath: keyPath, of: object, change: change, context: context)
+            return
+        }
+
+        guard let progress = object as? Progress else {
+            assertionFailure("Expected a Progress object")
+            return
+        }
+
+        // TODO: Update UI
+        OperationQueue.main.addOperation {
+            print(progress.fractionCompleted)
+        }
     }
 }

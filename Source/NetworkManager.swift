@@ -16,7 +16,14 @@ class NetworkManager: NSObject, ProgressReporting {
     init(endpoint: Endpoint, completion: @escaping (URL) -> Void) {
         self.endpoint = endpoint
         self.completion = completion
-        progress = Progress()
+        progress = Progress(totalUnitCount: -1)
+        progress.kind = .file
+
+        // #warning you must cast as AnyObject otherwise you will get a Segmentation Fault 11 
+        // compiler error.
+        progress.setUserInfoObject(
+            Progress.FileOperationKind.downloading as AnyObject, forKey: .fileOperationKindKey
+        )
 
         super.init()
     }
