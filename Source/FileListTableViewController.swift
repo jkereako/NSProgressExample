@@ -112,7 +112,7 @@ extension FileListTableViewController {
             return
         }
         
-        // TODO: Update UI
+        // Update the UI
         OperationQueue.main.addOperation { [unowned self] in
             guard let indexPath = self.selectedIndexPath else {
                 assertionFailure("`selectedIndexPath` is nil")
